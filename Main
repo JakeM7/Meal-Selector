@@ -1,0 +1,819 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#define FILES_LOCATION "c:/Users/Jake/Desktop/Pik"
+int main_menu();
+int breakfast_menu();
+int pastries_menu();
+int pancakes_frenchtoast_menu();
+int breakfast_casserole_menu();
+void dinner ();
+void lunch ();
+
+
+int main()
+{
+    int main_menu_option;
+    int breakfast_choice;
+    int pastries_choice;
+    int pancakes_frenchtoast_choice;
+    int breakfast_casserole_choice;
+    char pastries1[1000];
+    char pastries2[1000];
+    char pancakes_frenchtoast1[1000];
+    char pancakes_frenchtoast2[1000];
+    char casseroles1[1000];
+    char casseroles2[1000];
+    FILE*recipe_file;
+
+
+    time_t t;                       //randomize numbers each time from start
+    srand((unsigned) time(&t));     //random code variables
+    int b = rand() % 6;
+
+
+do
+    {
+
+        main_menu_option=main_menu();
+
+
+    do
+    {
+        if(main_menu_option==1)
+        {
+            printf("\n");
+            breakfast_choice=breakfast_menu();
+        if (breakfast_choice==1)
+        {
+            pastries_choice=pastries_menu();
+            if(pastries_choice==1)
+            {
+                printf("Here is the recipe for cinnamon coffee cake: \n");
+
+
+                recipe_file=fopen("c://Users/Jake/Desktop/Pik//cinnamon_coffee_cake.txt","r");
+                while(fgets(pastries1,1000,recipe_file)!=NULL)
+                {
+                    printf("%s", pastries1);
+
+                }
+                fclose(recipe_file);
+
+
+
+            }
+            else if(pastries_choice==2)
+            {
+                printf("Here is the recipe for pumpkin scones: \n");
+
+
+                recipe_file=fopen("c://Users/Jake/Desktop/Pik//pumpkin_scone.txt","r");
+                while(fgets(pastries2,1000, recipe_file)!=NULL)
+                {
+                    printf("%s", pastries2);
+
+                }
+                fclose(recipe_file);
+            }
+            else
+            {
+                printf("You entered an invalid option \n");
+            }
+        }
+        else if(breakfast_choice==2)
+        {
+            pancakes_frenchtoast_choice=pancakes_frenchtoast_menu();
+            if(pancakes_frenchtoast_choice==1)
+            {
+                printf("Here is the recipe for buttermilk pancakes: \n");
+
+
+                recipe_file=fopen("c://Users/Jake/Desktop/Pik//buttermilk_pancakes.txt","r");
+                while(fgets(pancakes_frenchtoast1,1000, recipe_file)!=NULL)
+                {
+                    printf("%s", pancakes_frenchtoast1);
+
+                }
+                fclose(recipe_file);
+            }
+            else if(pancakes_frenchtoast_choice==2)
+            {
+                printf("Here is the recipe for strawberry cheesecake french toast: \n");
+
+
+                recipe_file=fopen("C://Users/Jake/Desktop/Pik//strawberry_cheesecake_french_toast.txt","r");
+                while(fgets(pancakes_frenchtoast2,1000, recipe_file)!=NULL)
+                {
+                    printf("%s", pancakes_frenchtoast2);
+
+                }
+                fclose(recipe_file);
+            }
+            else
+            {
+                printf("You entered an invalid option \n");
+            }
+        }
+        else if (breakfast_choice==3)
+        {
+            breakfast_casserole_choice=breakfast_casserole_menu();
+            if(breakfast_casserole_choice==1)
+            {
+                printf("Here is the recipe for a bacon and egg casserole: \n");
+
+
+                recipe_file=fopen("c://Users/Jake/Desktop/Pik//bacon_and_egg_casserole.txt","r");
+                while(fgets(casseroles1,1000, recipe_file)!=NULL)
+                {
+                    printf("%s", casseroles1);
+
+                }
+                fclose(recipe_file);
+            }
+            else if(breakfast_casserole_choice==2)
+            {
+                printf("Here is the recipe for a hash brown casserole: \n");
+
+
+                recipe_file=fopen("c://Users/Jake/Desktop/Pik//hash_brown_casserole.txt","r");
+                while(fgets(casseroles2,1000, recipe_file)!=NULL)
+                {
+                    printf("%s", casseroles2);
+
+                }
+                fclose(recipe_file);
+            }
+            else
+            {
+                printf("You entered an invalid option \n");
+            }
+        }
+        else if (breakfast_choice==4)
+        {
+            printf("You entered the random Breakfast generator\n");
+            printf("\n");
+            printf("0. Cinnamon coffee cake\n");
+            printf("1. Pumpkin scones\n");
+            printf("2. Buttermilk pancakes\n");
+            printf("3. Strawberry cheesecake french toast\n");
+            printf("4. Bacon and egg casserole\n");
+            printf("5. Hash brown casserole\n");
+            printf("Your random number is %d\n", b);
+            if (b==0)
+            {
+                printf("Here is the recipe for cinnamon coffee cake: \n");
+
+
+                recipe_file=fopen("c://Users/Jake/Desktop/Pik//cinnamon_coffee_cake.txt","r");
+                while(fgets(pastries1,1000,recipe_file)!=NULL)
+                {
+                    printf("%s", pastries1);
+
+                }
+                fclose(recipe_file);
+            }
+            else if (b==1)
+            {
+                printf("Here is the recipe for pumpkin scones: \n");
+
+
+                recipe_file=fopen("c://Users/Jake/Desktop/Pik//pumpkin_scone.txt","r");
+                while(fgets(pastries2,1000, recipe_file)!=NULL)
+                {
+                    printf("%s", pastries2);
+
+                }
+                fclose(recipe_file);
+            }
+            else if (b==2)
+            {
+                printf("Here is the recipe for buttermilk pancakes: \n");
+
+
+                recipe_file=fopen("c://Users/Jake/Desktop/Pik//buttermilk_pancakes.txt","r");
+                while(fgets(pancakes_frenchtoast1,1000, recipe_file)!=NULL)
+                {
+                    printf("%s", pancakes_frenchtoast1);
+
+                }
+                fclose(recipe_file);
+            }
+            else if (b==3)
+            {
+                 printf("Here is the recipe for strawberry cheesecake french toast: \n");
+
+
+                recipe_file=fopen("C://Users/Jake/Desktop/Pik//strawberry_cheesecake_french_toast.txt","r");
+                while(fgets(pancakes_frenchtoast2,1000, recipe_file)!=NULL)
+                {
+                    printf("%s", pancakes_frenchtoast2);
+
+                }
+                fclose(recipe_file);
+            }
+            else if (b==4)
+            {
+                printf("Here is the recipe for a bacon and egg casserole: \n");
+
+
+                recipe_file=fopen("c://Users/Jake/Desktop/Pik//bacon_and_egg_casserole.txt","r");
+                while(fgets(casseroles1,1000, recipe_file)!=NULL)
+                {
+                    printf("%s", casseroles1);
+
+                }
+                fclose(recipe_file);
+            }
+            else if (b==5)
+            {
+                 printf("Here is the recipe for a hash brown casserole: \n");
+
+
+                recipe_file=fopen("c://Users/Jake/Desktop/Pik//hash_brown_casserole.txt","r");
+                while(fgets(casseroles2,1000, recipe_file)!=NULL)
+                {
+                    printf("%s", casseroles2);
+
+                }
+                fclose(recipe_file);
+            }
+        }
+
+    }
+    }while(breakfast_choice<5);
+    printf("\n");
+
+    if (main_menu_option ==3)
+    {
+        dinner ();
+    }
+    else if (main_menu_option ==2)
+    {
+        lunch ();
+    }
+
+}while(main_menu_option<5);
+
+
+    return 0;
+
+}
+
+        int main_menu()
+{
+    int main_menu_option;
+    printf("Welcome to Pik Yo Meal! \n");
+    printf("***Main menu*** \n");
+    printf("1. Breakfast \n");
+    printf("2. Lunch \n");
+    printf("3. Dinner \n");
+    printf("4. Dessert \n");
+    printf("5. Exit \n");
+    printf("\n");
+    scanf("%d", &main_menu_option);
+    return main_menu_option;
+}
+
+
+int breakfast_menu()
+{
+    int breakfast_choice;
+    printf("-----Breakfast----- \n");
+    printf("1. Pastries \n");
+    printf("2. Pancakes/french toast \n");
+    printf("3. Breakfast casseroles \n");
+    printf("4  Random\n");
+    printf("5. Exit Breakfast Option \n");
+    scanf("%d", &breakfast_choice);
+    return breakfast_choice;
+}
+
+
+int pastries_menu()
+{
+    int pastries_choice;
+    printf("Pastries: \n");
+    printf("1. Cinnamon coffee cake \n");
+    printf("2. Pumpkin scones \n");
+    scanf("%d", &pastries_choice);
+    return pastries_choice;
+}
+
+
+int pancakes_frenchtoast_menu()
+{
+    int pancakes_frenchtoast_choice;
+    printf("Pancakes and french toast: \n");
+    printf("1. Buttermilk pancakes \n");
+    printf("2. Strawberry cheesecake french toast \n");
+    scanf("%d", &pancakes_frenchtoast_choice);
+    return pancakes_frenchtoast_choice;
+}
+
+
+int breakfast_casserole_menu()
+{
+    int breakfast_casserole_choice;
+    printf("Breakfast casseroles: \n");
+    printf("1. Bacon and egg casserole \n");
+    printf("2. Hash brown casserole \n");
+    scanf("%d", &breakfast_casserole_choice);
+    return breakfast_casserole_choice;
+}
+
+
+void dinner ()
+{
+    int option_type;
+    int italian_option;
+    int mexican_option;
+    int seafood_option;
+
+    FILE* ptr_file;
+    char italian1[1000];
+    char italian2[1000];
+    char mexican1[1000];
+    char mexican2[1000];
+    char seafood1[1000];
+    char seafood2[1000];
+
+    time_t t;                       //randomize numbers each time from start
+    srand((unsigned) time(&t));     //random code variables
+    int a = rand() % 6;
+
+
+    do{
+        printf("-----Dinner-----\n");
+        printf("1. Italian\n");
+       printf("2. Mexican\n");
+       printf("3. Seafood\n");
+       printf("4. Random\n");
+       printf("5. Exit Dinner Option\n");
+       scanf("%d", & option_type);
+
+    if (option_type==1)
+    {
+        printf("1. Orecchiette with Salsa Cruda and Ricotta\n");
+        printf("2. Veal Piccata\n");
+        printf("3. Exit Italian Options\n");
+        scanf("%d", & italian_option);
+        if (italian_option==1)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Italian1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(italian1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", italian1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+
+        }
+        else if (italian_option==2)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Italian2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(italian2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", italian2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else
+        {
+            break;
+        }
+    }
+    else if (option_type==2)
+    {
+        printf("1. Zucchini and Red Pepper Enchiladas with Salsa\n");
+        printf("2. Grilled Skirt Steaks with Parsley Oregano Sauce\n");
+        printf("3. Exit Mexican Options\n");
+        scanf("%d", & mexican_option);
+        if (mexican_option==1)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Mexican1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(mexican1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", mexican1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (mexican_option==2)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Mexican2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(mexican2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", mexican2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else
+        {
+            break;
+        }
+    }
+    else if (option_type==3)
+    {
+        printf("1. Capellini with Shrimp and Creamy Tomato Sauce\n");
+        printf("2. Seafood Risotto\n");
+        printf("3. Exit Seafood Options\n");
+        scanf("%d", & seafood_option);
+        if (seafood_option==1)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Seafood1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(seafood1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", seafood1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (seafood_option==2)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Seafood2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(seafood2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", seafood2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else
+        {
+            break;
+        }
+    }
+    else if (option_type==4)
+    {
+        printf("You entered the random Dinner generator\n");
+        printf("\n");
+        printf("0. Orecchiette with Salsa Cruda and Ricotta\n");
+        printf("1. Veal Piccata\n");
+        printf("2. Zucchini and Red Pepper Enchiladas with Salsa\n");
+        printf("3. Grilled Skirt Steaks with Parsley Oregano Sauce\n");
+        printf("4. Capellini with Shrimp and Creamy Tomato Sauce\n");
+        printf("5. Seafood Risotto\n");
+        printf("Your random number is %d\n", a);
+        if (a==0)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Italian1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(italian1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", italian1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (a==1)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Italian2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(italian2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", italian2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (a==2)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Mexican1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(mexican1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", mexican1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (a==3)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Mexican2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(mexican2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", mexican2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (a==4)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Seafood1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(seafood1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", seafood1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (a==5)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Seafood2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(seafood2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", seafood2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+    }
+    }while(option_type!=5);
+}
+
+void lunch ()
+{
+    int lunch_option_type;
+    int noodle_option;
+    int soup_option;
+    int sandwich_option;
+
+    FILE* ptr_file;
+    char noodle1[1000];
+    char noodle2[1000];
+    char soup1[1000];
+    char soup2[1000];
+    char sandwich1[1000];
+    char sandwich2[1000];
+
+    time_t t;                       //randomize numbers each time from start
+    srand((unsigned) time(&t));     //random code variables
+    int c = rand() % 6;
+
+
+    do{
+        printf("-----Lunch-----\n");
+        printf("1. Noodle\n");
+       printf("2. Soup\n");
+       printf("3. Sandwich\n");
+       printf("4. Random\n");
+       printf("5. Exit Lunch Option\n");
+       scanf("%d", & lunch_option_type);
+
+    if (lunch_option_type==1)
+    {
+        printf("1. Baked Mac and Cheese\n");
+        printf("2. Singapore Noodles\n");
+        printf("3. Exit Noodle Options\n");
+        scanf("%d", & noodle_option);
+        if (noodle_option==1)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Noodle1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(noodle1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", noodle1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+
+        }
+        else if (noodle_option==2)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Noodle2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(noodle2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", noodle2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else
+        {
+            break;
+        }
+    }
+    else if (lunch_option_type==2)
+    {
+        printf("1. Black Bean Soup\n");
+        printf("2. Classic Chicken Noodle Soup\n");
+        printf("3. Exit Soup Options\n");
+        scanf("%d", & soup_option);
+        if (soup_option==1)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Soup1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(soup1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", soup1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (soup_option==2)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Soup2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(soup2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", soup2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else
+        {
+            break;
+        }
+    }
+    else if (lunch_option_type==3)
+    {
+        printf("1. Gyro\n");
+        printf("2. Hawaiian Grilled Cheese\n");
+        printf("3. Exit Sandwich Options\n");
+        scanf("%d", & sandwich_option);
+        if (sandwich_option==1)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Sandwich1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(sandwich1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", sandwich1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (sandwich_option==2)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Sandwich2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(sandwich2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", sandwich2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else
+        {
+            break;
+        }
+    }
+    else if (lunch_option_type==4)
+    {
+        printf("You entered the random Lunch generator\n");
+        printf("\n");
+        printf("0. Baked Mac and Cheese\n");
+        printf("1. Singapore Noodles\n");
+        printf("2. Black Bean Soup\n");
+        printf("3. Classic Chicken Noodle Soup\n");
+        printf("4. Gyro\n");
+        printf("5. Hawaiian Grilled Cheese\n");
+        printf("Your random number is %d\n", c);
+        if (c==0)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Noodle1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(noodle1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", noodle1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (c==1)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Noodle2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(noodle2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", noodle2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (c==2)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Soup1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(soup1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", soup1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (c==3)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Soup2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(soup2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", soup2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (c==4)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Sandwich1.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(sandwich1,1000,ptr_file)!= NULL)
+            {
+                printf("%s", sandwich1);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+        else if (c==5)
+        {
+            ptr_file= fopen ("c://Users/Jake/Desktop/Pik//Sandwich2.txt", "r");
+            if (!ptr_file)
+            {
+                printf("File not found\n");
+            }
+            while (fgets(sandwich2,1000,ptr_file)!= NULL)
+            {
+                printf("%s", sandwich2);
+            }
+            fclose(ptr_file);
+            printf("\n");
+        }
+    }
+        }while(lunch_option_type!=5);
+
+
+}
